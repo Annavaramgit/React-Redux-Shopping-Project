@@ -5,6 +5,8 @@ import Card from 'react-bootstrap/Card';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCart } from '../store/CartSlice';
 import { getProductsUsingApi } from '../store/productSlice';
+import StatusCode from '../Utils/StatusCode';
+import Alert from 'react-bootstrap/Alert';
 
 
 
@@ -25,10 +27,14 @@ const Product = () => {
         //if we use redux instead of redux-tookit then we need mention type also,but here action-type take care of reduxtoolkit
         dispatch(addCart(product));
     }
-    if (status === 'error') {
-        return <h4>Something Went Wrong!! check Once Your Request!!</h4>
+    if (status === StatusCode.ERROR) {
+
+
+        return <Alert key="danger" variant='danger'>
+            Something Went Wrong!! check Once Your Request!!
+        </Alert>
     }
-    if (status === 'loading') {
+    if (status === StatusCode.LOADING) {
         return <h3> Loading!! Please Wait!!</h3>
 
     }

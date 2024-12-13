@@ -13,7 +13,7 @@ const CartSlice = createSlice({
         },
         removeItemFromCart(state, action) {
             /*what ever item id and action item id same then only it will fail ,
-            remaining(not equal) items are return and satys on cart comp*/
+            remaining(not equal) items are return and stays on cart comp*/
            
             return state.filter(item => item.id !== action.payload);
         }

@@ -12,10 +12,10 @@ function App() {
   //routing code
   const route = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<LayoutComp />}>
-      <Route index element={<Home />}/>
-      <Route path="/cart" element={<Cart />}/>
-      <Route path="/product" element={<Product/>}/>
-      
+      <Route index element={<Home />} />
+      <Route path="/cart" element={<Cart />} />
+      <Route path="/product" element={<Product />} />
+
     </Route>
   ))
 
